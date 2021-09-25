@@ -1,3 +1,4 @@
+# add tasks
 tasks:
   - init: pip3 install -r requirements.txt
     command: python3 src/app.py

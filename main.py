@@ -1,3 +1,7 @@
 import pandas as pd
 import numpy as np 
-import this
+from plotnine import*
+
+
+if __name__ == '__main__':
+    

@@ -1,4 +1,4 @@
 pandas
 numpy
 plotnine
-sklern
+scikit-learn

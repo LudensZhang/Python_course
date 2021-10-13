@@ -53,6 +53,8 @@ def monte_pi(n):
     monte_PI = 4*in_ROUND/int(n)
     print(f'the pi caclulated by monte-caro using {n} dots is {monte_PI}')
 
+def ages_OF_children():
+    
 
 if __name__ == '__main__':
     # factorial(5)

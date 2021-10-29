@@ -1,4 +1,9 @@
 # 基础编程作业
+0. 导入需要的包 
+```
+import numpy as np
+import pandas as pd
+```
 1. 100 的阶乘是多少?(华为工程师面试题目)
 ```
 def factorial(a):

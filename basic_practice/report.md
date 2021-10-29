@@ -1,24 +1,31 @@
-import numpy as np
-import pandas as pd
-
-
-ç
-
+# 基础编程作业
+1. 100 的阶乘是多少?(华为工程师面试题目)
+```
+def factorial(a):
+    b = int(a)
+    for i in range(a-1):
+        b *= (i+1)
+    print(f'the factorial of {a} is {b}')
+```
+2. 一只青蛙一次只能跳一级或者两级台阶，青蛙跳到 100 级台阶有多少中跳法?(google 工程师面试题目)
+```
 def ways_OF_steps(n):
     if n == 2: 
         return 2
     if n ==1:
         return 1
     return ways_OF_steps(n-2) + ways_OF_steps(n-1)
-
-
+```
+3. 100 个人集中在一个房间，至少有两个人生日相同的概率有多大?(微软工程师面试题目) 
+```
 def chance_OF_same_BIRTH(n):
     q = 1 
     for i in range(1, n):
         q *= 1-i/365
     print(f'the chance that at least 2 person  have samebirthday is {1-q}')
-    
-
+```
+4. 有一个五位数 abcde，乘以 4 以后变成 edcba，abcde 是多少?Apple 实习面试题目)
+```
 def find_edcba():
     for i in range(10000, 30000):
         ls_1 = list(x for x in str(i))
@@ -30,8 +37,9 @@ def find_edcba():
         if ls_1 == ls_2:
             print(f'find the edcba:{i}')
             break
-
-
+```
+5. 运用 Monte Carno 方法计算圆周率的近似值。
+```
 def monte_pi(n):
     random_POSIRION = np.random.uniform(-1, 1, size=[eval(n), 2])
     in_ROUND = 0
@@ -40,8 +48,9 @@ def monte_pi(n):
             in_ROUND += 1
     monte_PI = 4*in_ROUND/eval(n)
     print(f'the pi caclulated by monte-caro used {n} dots is {monte_PI}')
-    
-
+```
+6. 一普查员问一位女士,“你有多少个孩子,他们多少岁?”女士回答:“我有三个孩子,他们的岁数相乘是 36,岁数相加就等于隔离间屋的门牌号码.”普查员立刻走到隔邻,看了一看,回来说:”我还需要多少资料.”女士回答:“我现在很忙,我最大的孩子正在楼上睡觉.”普查员说:”谢谢,我己知道了 问题: 那三个孩子的岁数是多少?
+```
 def ages_of_children():
     list_OF_oldest = []
     list_OF_sub1 = []
@@ -60,8 +69,9 @@ def ages_of_children():
     df_AGE.drop_duplicates(subset='ages_sum', keep=0, inplace=True)
     for age_index in df_AGE.index:
         print(f"if the sum of ages is {df_AGE.loc[age_index, 'ages_sum']},the ages of these children are {df_AGE.loc[age_index, df_AGE.columns[0:-1]].values.tolist()}")
-
-
+```
+7. 有两个序列 a,b，大小都为 n,序列元素的值任意整形数，无序;要求:通过交换 a,b 中的元素，使序列 a 元素的和与序列 b 元素的和之间的差最小。
+```
 def minest_sum_gap():
     a = np.random.randint(low=0, high=100, size=(5)).tolist()
     b = np.random.randint(low=0, high=100, size=(5)).tolist()
@@ -76,8 +86,9 @@ def minest_sum_gap():
         else:
             a_RESET.append(list_COMBINED[i])
     print(f'Reseted lists are{a_RESET}{b_RESET}, the minest gap is {abs(sum(a_RESET)-sum(b_RESET))}')
-    
-    
+```
+8. 有三顶红帽子和两顶白帽子。将其中的三顶帽子分别戴在 A、B、C 三人头上。这三人每人都只能 看见其他两人头上的帽子，但看不见自己头上戴的帽子，并且也不知道剩余的两顶帽子的颜色。问 A:“你戴的是什么颜色的帽子?” A 回答说:“不知道。” 接着，又以同样的问题问 B。B 想了想之后，也回答说:“不知道。” 最后问 C。C 回答说:“我知道我戴的帽子是什么颜色了。” 当然，C 是 在听了 A、B 的回答之后而作出回答的。请尝试用编程方法解答此问题。
+```
 def cap_color(is_RED):
     if is_RED:
         return 'red'
@@ -91,8 +102,9 @@ def cap_color_possible():
     for i in all_POSSIBLE:
         if not ((i[1] == i[2] == 0) or (i[0] == i[2] == 0)) or ((i[0] == i[1] == 1) and (i[2] == 0)):
             print(f'If C see A is wearing {cap_COLOR(i[0])} cap and B is wearing {cap_COLOR(i[1])} cap, he is wearing {cap_COLOR(i[2])} cap.')
-  
-    
+```
+9. 汉诺塔问题编程解答。 
+```
 def hanoi_tower(x, y, z, n):
     if n == 1:
         print(f'move disk from {x} to {z}')
@@ -101,7 +113,9 @@ def hanoi_tower(x, y, z, n):
         print(f'move disk from {x} to {z}')
         hanoi_tower(y, x, z, n-1)
 
-
+```
+10. 八皇后问题编程解答。
+```
 def conflict( state, nextX ):
     nextY = len(state)
     for i in range(nextY):
@@ -118,16 +132,4 @@ def queens(num = 8,state = ()):
             else:
                 for result in queens(num,state+(pos,)):
                     yield (pos,)+result
-        
-    
-if __name__ == '__main__':
-    # factorial(5)
-    # print(f'the ways of 100 steps is {ways_OF_steps(30)}')
-    # chance_OF_same_BIRTH(100)
-    # find_edcba()
-    # monte_pi(100)
-    # ages_of_children()
-    # minest_sum_gap()
-    # cap_COLOR_possible()
-    # hanoi_tower('x', 'y', 'z', 2)
-    print(len(list(queens(8))))
+```

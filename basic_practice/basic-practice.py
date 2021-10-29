@@ -2,8 +2,6 @@ import numpy as np
 import pandas as pd
 
 
-ç
-
 def ways_OF_steps(n):
     if n == 2: 
         return 2

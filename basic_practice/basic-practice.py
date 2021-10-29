@@ -83,17 +83,37 @@ def minest_sum_gap():
     print(f'Reseted lists are{a_RESET}{b_RESET}, the minest gap is {abs(sum(a_RESET)-sum(b_RESET))}')
     
     
-def hat_COLOR():
-    num_OF_red = 3
-    num_OF_white = 2
+def cap_color(is_RED):
+    if is_RED:
+        return 'red'
+    else:
+        return 'white'
+    
+    
+def cap_color_possible():
+    all_POSSIBLE = [[i, j, k] for i in range(2) for j in range(2) for k in range(2)]
+    all_POSSIBLE = np.array(all_POSSIBLE).reshape(8, 3)
+    for i in all_POSSIBLE:
+        if not ((i[1] == i[2] == 0) or (i[0] == i[2] == 0)) or ((i[0] == i[1] == 1) and (i[2] == 0)):
+            print(f'If C see A is wearing {cap_COLOR(i[0])} cap and B is wearing {cap_COLOR(i[1])} cap, he is wearing {cap_COLOR(i[2])} cap.')
+  
+    
+def hanoi_tower():
+    pass
+   
+   
+def queen():
+    pass
     
     
 if __name__ == '__main__':
     # factorial(5)
-    print(f'the ways of 100 steps is {ways_OF_steps(30)}')
+    # print(f'the ways of 100 steps is {ways_OF_steps(30)}')
     # chance_OF_same_BIRTH(100)
     # find_edcba()
     # monte_pi(100)
     # ages_of_children()
     # minest_sum_gap()
-    # hat_COLOR()
+    # cap_COLOR_possible()
+    # hanoi_tower
+    # queen()

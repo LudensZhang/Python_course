@@ -2,14 +2,24 @@ import pandas as pd
 import numpy as np 
 from plotnine import*
 
-def Multiplication_table():
-    for i in range(1, 10):
-        for ii in range(1, i+1):
-            print(f'{i}x{ii}={i*ii}', end='')
-            for iii in range(3 - len(str(i*ii))):
-                print(' ', end='')
-        print('\n')
+
+class BMI():
+    def __init__(self, height, weight):
+        self.height = height
+        self.weight = weight
+    
+    def calculate(self):
+        result = self.weight/self.height**2
+        if result < 18.5:
+            print(f'Your BMI is {result}, too slim')
+        elif result < 25:
+            print(f'Your BMI is {result}, normal')
+        elif result < 30:
+            print(f'Your BMI is {result}, overweight')
+        else:
+            print(f'Your BMI is {result}, obesity')
 
 
 if __name__ == '__main__':
-    Multiplication_table()
+    a = BMI(1.7, 60)
+    a.calculate()

@@ -29,18 +29,18 @@ class BounceBalls:
     def __init__(self):
         self.ballList = [] # Create a list for balls
         
-        window = Tk() # Create a window
+        window = Tk() # Create a topwindow
         window.title("Bouncing Balls") # Set a title
         
         self.width = 350 # Width of the self.canvas
         self.height = 150 # Width of the self.canvas
-        self.canvas = Canvas(window, bg = "white", 
+        self.canvas = Canvas(window, bg = "white",           # Create canvas
             width = self.width, height = self.height)
-        self.canvas.pack()
+        self.canvas.pack()  # Pack the canvas
         
-        frame = Frame(window)
+        frame = Frame(window)   #Subframe of windoww
         frame.pack()
-        btStop = Button(frame, text = "Stop", command = self.stop)
+        btStop = Button(frame, text = "Stop", command = self.stop)  # Create buttons
         btStop.pack(side = LEFT)
         btResume = Button(frame, text = "Resume",
             command = self.resume)
@@ -52,9 +52,9 @@ class BounceBalls:
         
         self.sleepTime = 100 # Set a sleep time 
         self.isStopped = False
-        self.animate()
+        self.animate()  
         
-        window.mainloop() # Create an event loop
+        window.mainloop() # Create an event loop, monitor the whole GUI in window
            
     def stop(self): # Stop animation
         self.isStopped = True
@@ -87,7 +87,7 @@ class BounceBalls:
     
         ball.x += ball.dx
         ball.y += ball.dy
-        self.canvas.create_oval(ball.x - ball.radius, 
+        self.canvas.create_oval(ball.x - ball.radius,               # Draw balls
             ball.y - ball.radius, ball.x + ball.radius, 
             ball.y + ball.radius, fill = ball.color, tags = "ball")
                                              

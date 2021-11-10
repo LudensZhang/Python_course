@@ -6,3 +6,4 @@
 ## 弹子球游戏示例
 [BounceBall.py]('example_code/BounceBall.py')
 ## 贪吃蛇游戏示例
+[SnakeGame.py]('example_code/SnakeGame.py')

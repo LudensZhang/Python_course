@@ -4,6 +4,6 @@
 ## tkinter模块使用
 ## wxPython模块使用
 ## 弹子球游戏示例
-[BounceBall.py](example_code/BounceBall.py)
+[BounceBall.py](example_code/BounceBalls.py)
 ## 贪吃蛇游戏示例
 [SnakeGame.py](example_code/SnakeGame.py)
